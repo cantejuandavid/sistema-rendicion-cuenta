@@ -1,0 +1,148 @@
+<h3>FORMATOS QUE APLICAN A EMPRESAS DE SERVICIOS PÚBLICOS</h3>
+
+
+<div role="tabpanel">
+
+	<ul class="nav nav-tabs" role="tablist" id="mytabs">
+		<li role="presentation" class="active"><a href="#formulario" aria-controls="formulario" role="tab" data-toggle="tab">Formulario</a></li>
+		<li role="presentation"><a href="#anexo1" aria-controls="anexo1" role="tab" data-toggle="tab">Anexo-1</a></li>
+		<li role="presentation"><a href="#anexo2" aria-controls="anexo2" role="tab" data-toggle="tab">Anexo-2</a></li>
+		<li role="presentation"><a href="#anexo3" aria-controls="anexo3" role="tab" data-toggle="tab">Anexo-3</a></li>
+	</ul>
+
+	<div class="tab-content">
+		<div role="tabpanel" class="tab-pane active" id="formulario">			
+			<form id="esp" class="form-horizontal">
+				<div class="form-group">
+					<label for="entidad" class="col-sm-2 control-label">Entidad ESP: </label>
+					<div class="col-sm-10">
+						<select name="entidad" id="entidad" class="form-control">
+							<option ng-repeat="e in entidades" value="{{e._id}}">{{e.name}}</option>
+						</select>
+					</div>
+					
+				</div>
+				
+				<p>¿La entidad territorial llenó los fomatos que aplican a estas entidades?</p>
+				<ul class="form_resolucion">
+					<li ng-repeat="question in questions" class="todos">
+						<span class="number">{{$index + 1}}</span>
+						<div>
+							{{question.question}}
+							<a href="" class="text-info">Ver Ayuda</a>
+						</div>
+						<div class="respuesta checkbox" >		
+							<label class="radio-inline">
+								<input  type="radio" ng-value="si" name="group{{$index+1}}" id="si"> SI
+							</label>
+							<label class="radio-inline">
+								<input  type="radio" ng-value="no" name="group{{$index+1}}" id="no"> NO
+							</label>
+							<label class="radio-inline">
+								<input  type="radio" ng-value="na" name="group{{$index+1}}" id="na" checked> N/A
+							</label>
+						</div>
+					</li>
+				</ul>
+				<button type="submit" class="btn btn-default">Procesar</button>
+			</form>
+		</div>
+		<div role="tabpanel" class="tab-pane" id="anexo1">
+			<form id="anexo1-esp">
+				<div class="form-group">
+					<label for="entidad">Entidad ESP: </label>
+					<select name="entidad" id="entidad" class="form-control">
+						<option ng-repeat="e in entidades" value="{{e._id}}">{{e.name}}</option>
+					</select>
+				</div>
+				<p>¿La entidad presentó el formato ET1: Modificaciones al presupuesto de ingresos, con los respectivos anexos?</p>
+				<ul class="form_resolucion">
+					<li ng-repeat="question in anexo_1" class="todos">
+						<span class="number">{{$index + 1}}</span>
+						<div>
+							{{question.question}}
+							<a href="">Ver dtexto</a>
+						</div>
+						<div class="respuesta checkbox" >		
+							<label class="radio-inline">
+								<input  type="radio" ng-value="si" name="group{{$index+1}}" id="si"> SI
+							</label>
+							<label class="radio-inline">
+								<input  type="radio" ng-value="no" name="group{{$index+1}}" id="no"> NO
+							</label>
+							<label class="radio-inline">
+								<input  type="radio" ng-value="na" name="group{{$index+1}}" id="na" checked> N/A
+							</label>
+						</div>
+					</li>
+				</ul>
+				<div><input type="submit" value="Procesar"></div>
+			</form>
+		</div>
+		<div role="tabpanel" class="tab-pane" id="anexo2">
+			<form id="anexo1-esp">
+				<div class="form-group">
+					<label for="entidad">Entidad ESP: </label>
+					<select name="entidad" id="entidad" class="form-control">
+						<option ng-repeat="e in entidades" value="{{e._id}}">{{e.name}}</option>
+					</select>
+				</div>
+				<p>¿Al formato 13: SEUD la entidad presentó los respectivos anexos?</p>
+				<ul class="form_resolucion">
+					<li ng-repeat="question in anexo_2" class="todos">
+						<span class="number">{{$index + 1}}</span>
+						<div>
+							{{question.question}}
+							<a href="">Ver dtexto</a>
+						</div>
+						<div class="respuesta checkbox" >		
+							<label class="radio-inline">
+								<input  type="radio" ng-value="si" name="group{{$index+1}}" id="si"> SI
+							</label>
+							<label class="radio-inline">
+								<input  type="radio" ng-value="no" name="group{{$index+1}}" id="no"> NO
+							</label>
+							<label class="radio-inline">
+								<input  type="radio" ng-value="na" name="group{{$index+1}}" id="na" checked> N/A
+							</label>
+						</div>
+					</li>
+				</ul>
+				<div><input type="submit" value="Procesar"></div>
+			</form>
+		</div>
+		<div role="tabpanel" class="tab-pane" id="anexo3">
+			<form id="anexo1-esp">
+				<div class="form-group">
+					<label for="entidad">Entidad ESP: </label>
+					<select name="entidad" id="entidad" class="form-control">
+						<option ng-repeat="e in entidades" value="{{e._id}}">{{e.name}}</option>
+					</select>
+				</div>
+				<p>¿La entidad presentó el formato ET4: Ejecución reservas presupuestales, con los respectivos anexos?</p>
+				<ul class="form_resolucion">
+					<li ng-repeat="question in anexo_3" class="todos">
+						<span class="number">{{$index + 1}}</span>
+						<div>
+							{{question.question}}
+							<a href="">Ver dtexto</a>
+						</div>
+						<div class="respuesta checkbox" >		
+							<label class="radio-inline">
+								<input  type="radio" ng-value="si" name="group{{$index+1}}" id="si"> SI
+							</label>
+							<label class="radio-inline">
+								<input  type="radio" ng-value="no" name="group{{$index+1}}" id="no"> NO
+							</label>
+							<label class="radio-inline">
+								<input  type="radio" ng-value="na" name="group{{$index+1}}" id="na" checked> N/A
+							</label>
+						</div>
+					</li>
+				</ul>
+				<div><input type="submit" value="Procesar"></div>
+			</form>
+		</div>
+	</div>
+
+</div>

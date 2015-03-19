@@ -1,0 +1,32 @@
+<h3>FORMATOS QUE APLICAN A TODOS LOS SUJETOS DE CONTROL</h3>
+<form id="todos">
+	<div class="form-group">
+		<label for="entidad">Entidad: </label>
+		<select name="entidad" id="entidad" class="form-control">
+			<option ng-repeat="e in entidades" value="{{e._id}}">{{e.name}}</option>
+		</select>
+	</div>
+	
+	<p>¿La entidad llenó los fomatos que aplican a todos los sujetos de control?</p>
+	<ul class="form_resolucion">
+		<li ng-repeat="question in questions" class="todos">
+			<span class="number">{{$index + 1}}</span>
+			<div>
+				{{question.question}}
+				<a href="">Ver Ayuda</a>
+			</div>
+			<div class="respuesta checkbox" >		
+				<label class="radio-inline">
+					<input  type="radio" value="si" name="{{question._id}}" id="si"> SI
+				</label>
+				<label class="radio-inline">
+					<input  type="radio" value="no" name="{{question._id}}" id="no"> NO
+				</label>
+				<label class="radio-inline">
+					<input  type="radio" value="na" name="{{question._id}}" id="na"> N/A
+				</label>
+			</div>
+		</li>
+	</ul>
+	<div><input type="submit" value="Procesar"></div>
+</form>

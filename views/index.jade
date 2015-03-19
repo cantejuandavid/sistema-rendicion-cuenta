@@ -1,0 +1,29 @@
+extends layout
+
+block content
+	.containerr(ng-controller="appController")
+		.links
+			h1 LISTA DE CHEQUEO
+			.proyecto.
+				Proyecto "APOYO A LA GESTIÓN DE AUDITORÍA Y CONTROL DE LA CONTRALORÍA DEPARTAMENTAL DEL HUILA"
+			p.
+				Click a los siguientes vinculos para abrir el formato de chequeo para aplicar a las entidades.
+			.resolucion
+				ul
+					li(ng-click="link('/')") Inicio
+					li(ng-click="link('verres')") Ver Resolución 230
+					li Resolucion 230
+					li(ng-click="link('registrar_question')") Crear Pregunta
+					li(ng-click="link('registrar_entidad')") Crear Entidad
+			.formatos
+				ul
+					li(ng-click="link('todos')") A todos los sujetos
+					li(ng-click="link('et')") A Entidades Territoriales
+					li(ng-click="link('esp')") A Empresas de Servicios Público
+					li(ng-click="link('ese')") A Empresas Sociales del Estado
+					li(ng-click="link('ed')") A Entidades Descentralizadas
+					li(ng-click="link('cp')") A Centros Provinciales
+					li(ng-click="link('otras')") Otras Entidades
+					li(ng-click="link('esespeciales')") A Entidades de Servicios Especiales
+					li(ng-click="link('puntoctrl')") A Punto de Control					
+		.contenido(ng-view)
