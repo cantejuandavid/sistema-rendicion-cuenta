@@ -7,9 +7,17 @@ var bodyParser = require('body-parser');
 
 var data = require('./routes/data');
 var storing = require('./routes/storing');
+var stormpath = require('express-stormpath');
 
 var app = express();
 
+app.use(stormpath.init(app, {
+  apiKeyFile: path.join(__dirname, 'bin/apiKey-9SXXT8CBH3GWZI98G276AAG0X.properties'),
+  application: 'https://api.stormpath.com/v1/applications/35atKZAXw3i3MVhHOwzLIG',
+  secretKey: 'some_long_random_string',
+  enableUsername: true,
+  requireUsername: true,
+}));
 
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'jade');
@@ -21,13 +29,12 @@ app.use(bodyParser.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
-app.get('/', function(req, res) {
-  res.render('index')
+app.get('/', stormpath.loginRequired, function(req, res) {
+  console.log(req.user)
+  res.render('index', {user: req.user})
 })
-app.use('/data', data);
-app.use('/storing', storing);
-
-
+app.use('/data', stormpath.loginRequired, data);
+app.use('/storing', stormpath.loginRequired, storing);
 
 app.use(function(req, res, next) {  
   var err = new Error('Not Found');

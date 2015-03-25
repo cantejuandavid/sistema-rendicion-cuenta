@@ -1,8 +1,7 @@
-@import url("http://fonts.googleapis.com/css?family=Francois+One|Crimson+Text")
+@import url("http://fonts.googleapis.com/css?family=Francois+One|Crimson+Text|Open+Sans")
 
 html, body
-	background #AF1E1E
-	font-family 'Crimson Text', arial
+	background #AF1E1E	
 	padding 0
 	margin 0
 	
@@ -11,40 +10,45 @@ h1
 	font-family 'Francois one', sans-serif
 
 .containerr
+	font-family 'Crimson Text', arial
 	background #fff
 	box-shadow 0 0 5px rgba(0,0,0,.2)
-	padding 20px
 	color #000
 	margin 20px
+	margin-top 60px
 	display block
 	box-sizing border-box
 	font-size 0
 	.links
 		display inline-block
 		vertical-align top
-		font-size 16px
-		width 30%		
+		font-size 16px		
 		ul
 			li
 				cursor pointer
 				&:hover
 					color #AF1E1E
 	.contenido
+		font-family 'Open Sans', arial
 		display inline-block
-		vertical-align top
-		width 70%
-		padding 20px
+		vertical-align top		
+		padding 20px		
 		font-size 16px
-		background #EFEFEF
-		height 550px
-		overflow-y scroll
-		.form_resolucion			
-			margin 0
+		background #F4F4F4		
+		.questions		
+			font-size 14px				
+			margin-top 20px
 			padding 0
 			list-style none
-			li
-				padding 5px
-				border 1px solid #BBBBBB				
+			li				
+				vertical-align top
+				width 100%	
+				margin-bottom 10px
+				box-shadow 0 0 2px rgba(0,0,0,.1)
+				box-sizing border-box	
+				background #fff
+				padding 10px
+				display inline-block			
 				span.number
 					font-size 20px
 					text-align center
@@ -52,23 +56,24 @@ h1
 					display inline-block
 					width 5%					
 					vertical-align top
-				div
-					display inline-block					
-					width 90%					
+				.text_ans
+					width 90%
 					vertical-align top
+					display inline-block
 					a
 						color #AF1E1E
-				.respuesta								
+				.respuesta	
+					width 100%		
+					margin 10px 0 0 0					
 					text-align center	
-				&.todos
-					vertical-align top
-					width 100%	
-					margin-bottom 10px
-					box-shadow 0 0 5px rgba(0,0,0,.1)
-					box-sizing border-box	
-					background #fff
-					padding 10px
-					display inline-block			
+					.check, .timing
+						display inline-block
+						vertical-align middle
+						height 35px
+						width 60%						
+					.timing		
+						display none				
+						width 35%		
 		.containerPDF
 			height 480px
 			overflow-y scroll
@@ -76,7 +81,9 @@ h1
 				display block
 				margin 0 auto
 		h1,h2,h3
-			font-family 'Francois one', sans-serif
+			font-family 'Francois one', sans-serif		
+		.nav-tabs
+			margin-bottom 15px	
 
 					
 	

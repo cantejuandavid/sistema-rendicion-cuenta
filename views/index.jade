@@ -1,8 +1,8 @@
 extends layout
 
 block content
-	.containerr(ng-controller="appController")
-		.links
+	.containerr.row(ng-controller="appController")
+		.links.col-md-4
 			h1 LISTA DE CHEQUEO
 			.proyecto.
 				Proyecto "APOYO A LA GESTIÓN DE AUDITORÍA Y CONTROL DE LA CONTRALORÍA DEPARTAMENTAL DEL HUILA"
@@ -26,4 +26,4 @@ block content
 					li(ng-click="link('otras')") Otras Entidades
 					li(ng-click="link('esespeciales')") A Entidades de Servicios Especiales
 					li(ng-click="link('puntoctrl')") A Punto de Control					
-		.contenido(ng-view)
+		.contenido.col-md-8(ng-view)

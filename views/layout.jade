@@ -6,6 +6,7 @@ html(lang="es" ng-app="listaChequeoApp")
 		meta(charset="utf-8")
 		meta(http-equiv="X-UA-Compatible" content="IE=edge")
 		<link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
+		link(rel="shortcut icon" href="images/favicon.png")
 		link(rel="stylesheet" href="stylesheets/style.css")
 		link(rel="stylesheet" href="plugins/nprogress/nprogress.css")
 		<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
@@ -24,5 +25,63 @@ html(lang="es" ng-app="listaChequeoApp")
 		<script src="plugins/pdfjs/src/display/font_loader.js"></script>
 		<script src="plugins/pdfjs/src/display/annotation_helper.js"></script>
 		<script src="plugins/nprogress/nprogress.js"></script>
+		<script src="plugins/sweetalert-master/lib/sweet-alert.min.js"></script>
+		<link rel="stylesheet" type="text/css" href="plugins/sweetalert-master/lib/sweet-alert.css">
+		<link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
 	body
+		.navbar.navbar-default.navbar-fixed-top
+			.container-fluid
+				.navbar-header
+					button(type="button", class="navbar-toggle collapsed", data-toggle="collapse", data-target="#bs-example-navbar-collapse-1")
+						span.sr-only Toggle navigation
+						span.icon-bar 
+						span.icon-bar 
+						span.icon-bar 					
+					a.navbar-brand(style="padding:5px 15px;",href="#")
+						img(alt="Brand", src="images/favicon.png", width="40")				  
+
+				<!-- Collect the nav links, forms, and other content for toggling -->
+				.collapse.navbar-collapse(id="bs-example-navbar-collapse-1")
+					ul.nav.navbar-nav
+						li.active
+							a Principal
+						li
+							a(href="#") <i class="fa fa-bar-chart"></i> Estadísticas
+						li
+							a(href="#") <i class="fa fa-list-alt"></i> Reportes <span class="sr-only">(current)</span>
+						li.dropdown
+							a.dropdown-toggle(data-toggle="dropdown", role="button", aria-expanded="false") Formatos <span class="caret"></span>
+							ul.dropdown-menu(role="menu")
+								li
+									a Action
+								li
+									a Another action
+								li
+									a Something else here
+								li.divider
+								li
+									a Separated link
+								li.divider
+								li
+									a One more separated link					
+					ul.nav.navbar-nav.navbar-right
+						li.dropdown
+							a.dropdown-toggle(data-toggle="dropdown",role="button",aria-expanded="false") #{user.username} <span class="caret"></span>
+							ul.dropdown-menu(role="menu")
+								li
+									a Perfil
+								li
+									a Another action
+								li
+									a Something else here
+								li.divider
+								li
+									a Separated link
+								li.divider
+								li
+									a(href="/logout") Cerra sesión
+					form.navbar-form.navbar-left.navbar-center(role="Buscar")
+						.form-group
+							<input type="text" class="form-control" placeholder="Search" />						
+							<button type="submit" class="btn btn-default">Submit</button>
 		block content

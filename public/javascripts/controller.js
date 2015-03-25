@@ -10,13 +10,11 @@ lista.controller('formularioTODOS', function($scope, $location, $http, $route) {
 	var empty = 0
 
 	form.addEventListener('submit', function(e) {
-		e.preventDefault();		
-		var l = $(this).find('.respuesta').length
-		console.log(l)
+		e.preventDefault();				
+		var l = $(this).find('.respuesta').length		
 		$(this).find('input:radio:checked').length < l ? empty = 0 : empty = 1;
-        if(empty==0){
-        	alert('llena todo');
-        }
+        if(empty==0)
+        	swal("Oops!", "Por favor contesta todas las preguntas!", "error");
         else {
 			var o = $(this).serializeObject()
 			var e = o.entidad;
@@ -26,8 +24,14 @@ lista.controller('formularioTODOS', function($scope, $location, $http, $route) {
 				content: 	o
 			}
 			$http.post('/storing/resultado', res).success(function(data) {
-				alert("Información registrada")
-				$route.reload()
+				sweetAlert({
+					title: "Registrado!", 
+					text: "La revisión de cuentas ha sido exitosamente guardada!", 
+					type: "success"
+				}, function() {
+					$route.reload()
+				});
+				
 			})			
 		}
 	})
@@ -228,37 +232,6 @@ lista.controller('create_entidad', function($scope,$route, $http, $location) {
 	});
 })
 
-function serializeForm(form) {
-
-	form = document.getElementById(form) || document.forms[0];
-	var elems = form.elements;
-
-	var serialized = [], i, len = elems.length, str='';
-
-	for(i = 0; i < len; i += 1) {
-
-		var element = elems[i];
-		var type = element.type;
-		var name = element.name;
-		var value = element.value;
-
-		switch(type) {
-
-			case 'text':
-			case 'radio':
-			case 'checkbox':
-			case 'textarea':
-			case 'select-one':
-				str = name + '=' + value;
-				serialized.push(str);
-				break;
-			default:
-	        	break;
-	    }    
-	}
-	return serialized.join('&');
-}
-
 $.fn.serializeObject = function()
 {
    var o = {};
@@ -269,6 +242,7 @@ $.fn.serializeObject = function()
                o[this.name] = [o[this.name]];
            }
            o[this.name].push(this.value || '');
+           console.log(o[this.name])
        } else {
            o[this.name] = this.value || '';
        }
