@@ -157,38 +157,38 @@ lista.controller('formularioESESP', function($scope, $location, $http) {
 })
 
 lista.controller('verres', function($scope, $location) {
-	PDFJS.workerSrc = 'plugins/pdfjs/src/worker_loader.js';
-	renderPDF('files/RESOLUCION230.pdf', document.getElementById('holder'));
-	function renderPDF(url, canvasContainer, options) {
+	// PDFJS.workerSrc = 'plugins/pdfjs/src/worker_loader.js';
+	// renderPDF('https://docs.google.com/uc?authuser=0&id=0B8subCI3WaD7dDJUaWI0Nlp4Znd2QXFSYzNRdXFyM1dHd3Fj&export=download', document.getElementById('holder'));
+	// function renderPDF(url, canvasContainer, options) {
 
-	    var options = options || { scale: 1 };
+	//     var options = options || { scale: 1 };
 	        
-	    function renderPage(page) {
-	        var viewport = page.getViewport(options.scale);
-	        var canvas = document.createElement('canvas');
-	        var ctx = canvas.getContext('2d');
-	        var renderContext = {
-	          canvasContext: ctx,
-	          viewport: viewport
-	        };
+	//     function renderPage(page) {
+	//         var viewport = page.getViewport(options.scale);
+	//         var canvas = document.createElement('canvas');
+	//         var ctx = canvas.getContext('2d');
+	//         var renderContext = {
+	//           canvasContext: ctx,
+	//           viewport: viewport
+	//         };
 	        
-	        canvas.height = viewport.height;
-	        canvas.width = viewport.width;
+	//         canvas.height = viewport.height;
+	//         canvas.width = viewport.width;
 
-	        canvasContainer.appendChild(canvas);
+	//         canvasContainer.appendChild(canvas);
 	        
-	        page.render(renderContext);
-	    }
+	//         page.render(renderContext);
+	//     }
 	    
-	    function renderPages(pdfDoc) {
-	        for(var num = 1; num <= pdfDoc.numPages; num++)
-	            pdfDoc.getPage(num).then(renderPage);
-	    }
+	//     function renderPages(pdfDoc) {
+	//         for(var num = 1; num <= pdfDoc.numPages; num++)
+	//             pdfDoc.getPage(num).then(renderPage);
+	//     }
 
 	    
-	    PDFJS.getDocument(url).then(renderPages);
+	//     PDFJS.getDocument(url).then(renderPages);
 
-	} 
+	// } 
 
 });
 
