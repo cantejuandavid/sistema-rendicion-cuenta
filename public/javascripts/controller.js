@@ -37,7 +37,7 @@ lista.controller('formularioTODOS', function($scope, $location, $http, $route) {
 	})
 })
 
-lista.controller('formularioET', function($scope, $location, $http) {
+lista.controller('formularioET', function($scope, $location, $http, $route) {
 	$('#mytabs a').click(function (e) {
 		e.preventDefault()
 		$(this).tab('show')
@@ -81,7 +81,7 @@ lista.controller('formularioET', function($scope, $location, $http) {
 	})
 })
 
-lista.controller('formularioESP', function($scope, $location, $http) {
+lista.controller('formularioESP', function($scope, $location, $http, $route) {
 
 	$('#mytabs a').click(function (e) {
 		e.preventDefault()
@@ -125,7 +125,7 @@ lista.controller('formularioESP', function($scope, $location, $http) {
 	})
 })
 
-lista.controller('formularioED', function($scope, $location, $http) {
+lista.controller('formularioED', function($scope, $location, $http, $route) {
 
 	$('#mytabs a').click(function (e) {
 		e.preventDefault()
@@ -169,7 +169,7 @@ lista.controller('formularioED', function($scope, $location, $http) {
 	})
 })
 
-lista.controller('formularioCP', function($scope, $location, $http) {
+lista.controller('formularioCP', function($scope, $location, $http, $route) {
 
 	$('#mytabs a').click(function (e) {
 		e.preventDefault()
@@ -213,7 +213,7 @@ lista.controller('formularioCP', function($scope, $location, $http) {
 	})
 })
 
-lista.controller('formularioESE', function($scope, $location, $http) {
+lista.controller('formularioESE', function($scope, $location, $http, $route) {
 
 	$('#mytabs a').click(function (e) {
 		e.preventDefault()
@@ -257,7 +257,7 @@ lista.controller('formularioESE', function($scope, $location, $http) {
 	})
 })
 
-lista.controller('formularioESESP', function($scope, $location, $http) {
+lista.controller('formularioESESP', function($scope, $location, $http, $route) {
 
 	$('#mytabs a').click(function (e) {
 		e.preventDefault()
