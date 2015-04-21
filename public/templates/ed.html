@@ -23,23 +23,35 @@
 					</div>
 					
 					<p>¿La entidad descentralizada presentó los formatos que corresponden a esta entidad?</p>
-					<ul class="form_resolucion">
+					<ul class="questions">
 						<li ng-repeat="question in questions" class="todos">
 							<span class="number">{{$index + 1}}</span>
-							<div>
-								{{question.question}}
-								<a href="" class="text-info">Ver Ayuda</a>
-							</div>
-							<div class="respuesta checkbox" >		
-								<label class="radio-inline">
-									<input  type="radio" ng-value="si" name="group{{$index+1}}"> SI
-								</label>
-								<label class="radio-inline">
-									<input  type="radio" ng-value="no" name="group{{$index+1}}"> NO
-								</label>
-								<label class="radio-inline">
-									<input  type="radio" ng-value="na" name="group{{$index+1}}" checked> N/A
-								</label>
+							<div class="text_ans">
+								<div class="text_quetion">
+									{{question.question}}
+									<a href="" class="text-info">Ver Ayuda</a>
+								</div>						
+								<div class="respuesta">
+									<div class="check">
+										<label class="radio-inline">
+											<input  type="radio" value="si" ng-click="showTime($event)" name="{{question._id}}" id="resp"> SI
+										</label>
+										<label class="radio-inline">
+											<input  type="radio" value="no" ng-click="showTime($event)" name="{{question._id}}" id="resp"> NO
+										</label>
+										<label class="radio-inline">
+											<input  type="radio" value="na" ng-click="showTime($event)" name="{{question._id}}" id="resp" checked> N/A
+										</label>
+									</div>
+									<div class="timing">					
+										<div class="input-group">
+											<span class="input-group-btn">
+												<button class="btn btn-default" type="button"><strong>Tiempo:</strong></button>
+											</span>
+											<div id="content_time_{{question._id}}"></div>					
+										</div>						
+									</div>									
+								</div>
 							</div>
 						</li>
 					</ul>
@@ -55,23 +67,35 @@
 						</select>
 					</div>
 					<p>¿La entidad presentó el formato ED1: Ejecución presupuestal de ingresos, con los respectivos anexos?</p>
-					<ul class="form_resolucion">
+					<ul class="questions">
 						<li ng-repeat="question in anexo_1" class="todos">
 							<span class="number">{{$index + 1}}</span>
-							<div>
-								{{question.question}}
-								<a href="">Ver Ayuda</a>
-							</div>
-							<div class="respuesta checkbox" >		
-								<label class="radio-inline">
-									<input  type="radio" ng-value="si" name="group{{$index+1}}" id="si"> SI
-								</label>
-								<label class="radio-inline">
-									<input  type="radio" ng-value="no" name="group{{$index+1}}" id="no"> NO
-								</label>
-								<label class="radio-inline">
-									<input  type="radio" ng-value="na" name="group{{$index+1}}" id="na" checked> N/A
-								</label>
+							<div class="text_ans">
+								<div class="text_quetion">
+									{{question.question}}
+									<a href="" class="text-info">Ver Ayuda</a>
+								</div>						
+								<div class="respuesta">
+									<div class="check">
+										<label class="radio-inline">
+											<input  type="radio" value="si" ng-click="showTime($event)" name="{{question._id}}" id="resp"> SI
+										</label>
+										<label class="radio-inline">
+											<input  type="radio" value="no" ng-click="showTime($event)" name="{{question._id}}" id="resp"> NO
+										</label>
+										<label class="radio-inline">
+											<input  type="radio" value="na" ng-click="showTime($event)" name="{{question._id}}" id="resp" checked> N/A
+										</label>
+									</div>
+									<div class="timing">					
+										<div class="input-group">
+											<span class="input-group-btn">
+												<button class="btn btn-default" type="button"><strong>Tiempo:</strong></button>
+											</span>
+											<div id="content_time_{{question._id}}"></div>					
+										</div>						
+									</div>									
+								</div>
 							</div>
 						</li>
 					</ul>
@@ -87,23 +111,35 @@
 						</select>
 					</div>
 					<p>¿Al formato 13: SEUD la entidad presentó los respectivos anexos?</p>
-					<ul class="form_resolucion">
+					<ul class="questions">
 						<li ng-repeat="question in anexo_2" class="todos">
 							<span class="number">{{$index + 1}}</span>
-							<div>
-								{{question.question}}
-								<a href="">Ver Ayuda</a>
-							</div>
-							<div class="respuesta checkbox" >		
-								<label class="radio-inline">
-									<input  type="radio" ng-value="si" name="group{{$index+1}}" id="si"> SI
-								</label>
-								<label class="radio-inline">
-									<input  type="radio" ng-value="no" name="group{{$index+1}}" id="no"> NO
-								</label>
-								<label class="radio-inline">
-									<input  type="radio" ng-value="na" name="group{{$index+1}}" id="na" checked> N/A
-								</label>
+							<div class="text_ans">
+								<div class="text_quetion">
+									{{question.question}}
+									<a href="" class="text-info">Ver Ayuda</a>
+								</div>						
+								<div class="respuesta">
+									<div class="check">
+										<label class="radio-inline">
+											<input  type="radio" value="si" ng-click="showTime($event)" name="{{question._id}}" id="resp"> SI
+										</label>
+										<label class="radio-inline">
+											<input  type="radio" value="no" ng-click="showTime($event)" name="{{question._id}}" id="resp"> NO
+										</label>
+										<label class="radio-inline">
+											<input  type="radio" value="na" ng-click="showTime($event)" name="{{question._id}}" id="resp" checked> N/A
+										</label>
+									</div>
+									<div class="timing">					
+										<div class="input-group">
+											<span class="input-group-btn">
+												<button class="btn btn-default" type="button"><strong>Tiempo:</strong></button>
+											</span>
+											<div id="content_time_{{question._id}}"></div>					
+										</div>						
+									</div>									
+								</div>
 							</div>
 						</li>
 					</ul>

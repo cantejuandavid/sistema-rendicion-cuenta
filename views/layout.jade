@@ -29,7 +29,7 @@ html(lang="es" ng-app="listaChequeoApp")
 		<link rel="stylesheet" type="text/css" href="plugins/sweetalert-master/lib/sweet-alert.css">
 		<link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
 	body
-		.navbar.navbar-default.navbar-fixed-top
+		.navbar.navbar-inverse.navbar-fixed-top
 			.container-fluid
 				.navbar-header
 					button(type="button", class="navbar-toggle collapsed", data-toggle="collapse", data-target="#bs-example-navbar-collapse-1")
@@ -66,7 +66,7 @@ html(lang="es" ng-app="listaChequeoApp")
 									a One more separated link					
 					ul.nav.navbar-nav.navbar-right
 						li.dropdown
-							a.dropdown-toggle(data-toggle="dropdown",role="button",aria-expanded="false") #{user.username} <span class="caret"></span>
+							a.dropdown-toggle(data-toggle="dropdown",role="button",aria-expanded="false") Bienvenido, #{user.username} <span class="caret"></span>
 							ul.dropdown-menu(role="menu")
 								li
 									a Perfil
@@ -82,6 +82,6 @@ html(lang="es" ng-app="listaChequeoApp")
 									a(href="/logout") Cerra sesión
 					form.navbar-form.navbar-left.navbar-center(role="Buscar")
 						.form-group
-							<input type="text" class="form-control" placeholder="Search" />						
-							<button type="submit" class="btn btn-default">Submit</button>
+							<input type="text" class="form-control" placeholder="Resultados de rendición" />						
+							<button type="submit" class="btn btn-default">Buscar</button>
 		block content

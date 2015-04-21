@@ -17,6 +17,8 @@ app.use(stormpath.init(app, {
   secretKey: 'some_long_random_string',
   enableUsername: true,
   requireUsername: true,
+  expandCustomData: true,
+  enableForgotPassword: true
 }));
 
 app.set('views', path.join(__dirname, 'views'));
@@ -30,7 +32,6 @@ app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
 app.get('/', stormpath.loginRequired, function(req, res) {
-  console.log(req.user)
   res.render('index', {user: req.user})
 })
 app.use('/data', stormpath.loginRequired, data);
