@@ -49,6 +49,36 @@ lista.controller('formularioET', function($scope, $location, $http) {
 	$http.get('/data/questions/anexos3-et').success(function(data) {$scope.anexo_3 = data})
 
 	$http.get('/data/entidades/et').success(function(data) {$scope.entidades = data})
+
+	var form = document.getElementById('esp')
+	var empty = 0
+
+	form.addEventListener('submit', function(e) {
+		e.preventDefault();				
+		var l = $(this).find('.respuesta').length		
+		$(this).find('input:radio:checked').length < l ? empty = 0 : empty = 1;
+        if(empty==0)
+        	swal("Oops!", "Por favor contesta todas las preguntas!", "error");
+        else {
+			var o = $(this).serializeObject()
+			var e = o.entidad;
+			delete o.entidad;
+			var res = {
+				nameEntidad: e,
+				content: 	o
+			}
+			$http.post('/storing/resultado', res).success(function(data) {
+				sweetAlert({
+					title: "Registrado!", 
+					text: "La revisión de cuentas ha sido exitosamente guardada!", 
+					type: "success"
+				}, function() {
+					$route.reload()
+				});
+				
+			})			
+		}
+	})
 })
 
 lista.controller('formularioESP', function($scope, $location, $http) {
@@ -64,12 +94,35 @@ lista.controller('formularioESP', function($scope, $location, $http) {
 
 	$http.get('/data/entidades/esp').success(function(data) {$scope.entidades = data})
 		
-	// var form = document.getElementById('esp')
+	var form = document.getElementById('esp')
+	var empty = 0
 
-	// form.addEventListener('submit', function(e) {
-	// 	e.preventDefault();
-	// 	console.log('submit')
-	// })
+	form.addEventListener('submit', function(e) {
+		e.preventDefault();				
+		var l = $(this).find('.respuesta').length		
+		$(this).find('input:radio:checked').length < l ? empty = 0 : empty = 1;
+        if(empty==0)
+        	swal("Oops!", "Por favor contesta todas las preguntas!", "error");
+        else {
+			var o = $(this).serializeObject()
+			var e = o.entidad;
+			delete o.entidad;
+			var res = {
+				nameEntidad: e,
+				content: 	o
+			}
+			$http.post('/storing/resultado', res).success(function(data) {
+				sweetAlert({
+					title: "Registrado!", 
+					text: "La revisión de cuentas ha sido exitosamente guardada!", 
+					type: "success"
+				}, function() {
+					$route.reload()
+				});
+				
+			})			
+		}
+	})
 })
 
 lista.controller('formularioED', function($scope, $location, $http) {
@@ -85,12 +138,35 @@ lista.controller('formularioED', function($scope, $location, $http) {
 
 	$http.get('/data/entidades/ed').success(function(data) {$scope.entidades = data})
 		
-	// var form = document.getElementById('esp')
+	var form = document.getElementById('esp')
+	var empty = 0
 
-	// form.addEventListener('submit', function(e) {
-	// 	e.preventDefault();
-	// 	console.log('submit')
-	// })
+	form.addEventListener('submit', function(e) {
+		e.preventDefault();				
+		var l = $(this).find('.respuesta').length		
+		$(this).find('input:radio:checked').length < l ? empty = 0 : empty = 1;
+        if(empty==0)
+        	swal("Oops!", "Por favor contesta todas las preguntas!", "error");
+        else {
+			var o = $(this).serializeObject()
+			var e = o.entidad;
+			delete o.entidad;
+			var res = {
+				nameEntidad: e,
+				content: 	o
+			}
+			$http.post('/storing/resultado', res).success(function(data) {
+				sweetAlert({
+					title: "Registrado!", 
+					text: "La revisión de cuentas ha sido exitosamente guardada!", 
+					type: "success"
+				}, function() {
+					$route.reload()
+				});
+				
+			})			
+		}
+	})
 })
 
 lista.controller('formularioCP', function($scope, $location, $http) {
@@ -106,12 +182,35 @@ lista.controller('formularioCP', function($scope, $location, $http) {
 
 	$http.get('/data/entidades/cp').success(function(data) {$scope.entidades = data})
 		
-	// var form = document.getElementById('esp')
+	var form = document.getElementById('esp')
+	var empty = 0
 
-	// form.addEventListener('submit', function(e) {
-	// 	e.preventDefault();
-	// 	console.log('submit')
-	// })
+	form.addEventListener('submit', function(e) {
+		e.preventDefault();				
+		var l = $(this).find('.respuesta').length		
+		$(this).find('input:radio:checked').length < l ? empty = 0 : empty = 1;
+        if(empty==0)
+        	swal("Oops!", "Por favor contesta todas las preguntas!", "error");
+        else {
+			var o = $(this).serializeObject()
+			var e = o.entidad;
+			delete o.entidad;
+			var res = {
+				nameEntidad: e,
+				content: 	o
+			}
+			$http.post('/storing/resultado', res).success(function(data) {
+				sweetAlert({
+					title: "Registrado!", 
+					text: "La revisión de cuentas ha sido exitosamente guardada!", 
+					type: "success"
+				}, function() {
+					$route.reload()
+				});
+				
+			})			
+		}
+	})
 })
 
 lista.controller('formularioESE', function($scope, $location, $http) {
@@ -127,12 +226,35 @@ lista.controller('formularioESE', function($scope, $location, $http) {
 
 	$http.get('/data/entidades/esestado').success(function(data) {$scope.entidades = data})
 		
-	// var form = document.getElementById('esp')
+	var form = document.getElementById('esp')
+	var empty = 0
 
-	// form.addEventListener('submit', function(e) {
-	// 	e.preventDefault();
-	// 	console.log('submit')
-	// })
+	form.addEventListener('submit', function(e) {
+		e.preventDefault();				
+		var l = $(this).find('.respuesta').length		
+		$(this).find('input:radio:checked').length < l ? empty = 0 : empty = 1;
+        if(empty==0)
+        	swal("Oops!", "Por favor contesta todas las preguntas!", "error");
+        else {
+			var o = $(this).serializeObject()
+			var e = o.entidad;
+			delete o.entidad;
+			var res = {
+				nameEntidad: e,
+				content: 	o
+			}
+			$http.post('/storing/resultado', res).success(function(data) {
+				sweetAlert({
+					title: "Registrado!", 
+					text: "La revisión de cuentas ha sido exitosamente guardada!", 
+					type: "success"
+				}, function() {
+					$route.reload()
+				});
+				
+			})			
+		}
+	})
 })
 
 lista.controller('formularioESESP', function($scope, $location, $http) {
@@ -148,12 +270,35 @@ lista.controller('formularioESESP', function($scope, $location, $http) {
 
 	$http.get('/data/entidades/esespeciales').success(function(data) {$scope.entidades = data})
 		
-	// var form = document.getElementById('esp')
+	var form = document.getElementById('esp')
+	var empty = 0
 
-	// form.addEventListener('submit', function(e) {
-	// 	e.preventDefault();
-	// 	console.log('submit')
-	// })
+	form.addEventListener('submit', function(e) {
+		e.preventDefault();				
+		var l = $(this).find('.respuesta').length		
+		$(this).find('input:radio:checked').length < l ? empty = 0 : empty = 1;
+        if(empty==0)
+        	swal("Oops!", "Por favor contesta todas las preguntas!", "error");
+        else {
+			var o = $(this).serializeObject()
+			var e = o.entidad;
+			delete o.entidad;
+			var res = {
+				nameEntidad: e,
+				content: 	o
+			}
+			$http.post('/storing/resultado', res).success(function(data) {
+				sweetAlert({
+					title: "Registrado!", 
+					text: "La revisión de cuentas ha sido exitosamente guardada!", 
+					type: "success"
+				}, function() {
+					$route.reload()
+				});
+				
+			})			
+		}
+	})
 })
 
 lista.controller('verres', function($scope, $location) {

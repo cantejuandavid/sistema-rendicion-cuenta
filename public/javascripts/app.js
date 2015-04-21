@@ -68,10 +68,8 @@ lista.controller('appController', function($scope, $route, $location, $rootScope
 			NProgress.done();
 	});
 
-	$scope.showTime = function(e) {   
-		console.log('aa')
-    	var el = $(e.target)
-    	console.log(e)
+	$scope.showTime = function(e) {   		
+    	var el = $(e.target)    	
     	var id = el.attr('name')    
     	if(el.val() == 'si') {
     		console.log(el.val())
@@ -82,13 +80,13 @@ lista.controller('appController', function($scope, $route, $location, $rootScope
 	    	$('#content_time_'+id).append(s)
 	    	$(e.target).parent().parent().next().fadeIn().css("display","inline-block")
     	} 
-    	else{
-    		console.log(el.val())
+    	else{    		
 			$('#content_time_'+id).parent().parent().fadeOut(function() {
 				$('#content_time_'+id).empty()
 			})
     	}	
     }
 
+    
 });
 
