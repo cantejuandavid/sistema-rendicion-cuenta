@@ -17,6 +17,7 @@ app.use(stormpath.init(app, {
   secretKey: 'some_long_random_string',
   enableUsername: true,
   requireUsername: true,
+  enableRegistration: false,
   expandCustomData: true,
   enableForgotPassword: true
 }));

@@ -4,7 +4,7 @@ lista.config(['$routeProvider', '$locationProvider',
 	function($routeProvider, $locationProvider) {		
 		$routeProvider.
 			when('/', {
-				templateUrl:'templates/todos.html',
+				templateUrl:'templates/principal.html',
 				controller: 'principal'
 			}).
 			when('/todos', {
